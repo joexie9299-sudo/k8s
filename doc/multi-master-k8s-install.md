@@ -16,11 +16,11 @@
 
 #### 安装软件明细
 
-| 软件名                          | 版本      | 官方文档                                                                                                    | 介绍                                                                                                           |
-|------------------------------|---------|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| k8s(kubeadm\kubelet\kubectl) | v1.34.3 | https://v1-34.docs.kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ | kubeadm 用来建集群，kubelet 管理节点上的 Pod，kubectl 是和集群沟通的入口。                                                          |
-| containerd                   | 1.6.32  | https://github.com/containerd/containerd/blob/main/docs/getting-started.md                              | 在 K8s 中，containerd 就是负责容器的运行时管理，承担镜像拉取、容器生命周期和资源隔离等核心功能，是 kubelet 与容器之间的桥梁。                                  |
-| helm                         | v3.14.4 | https://helm.sh/zh/docs/intro/install/                                                                  | Helm 是 Kubernetes 的 包管理器，类似于 Linux 的 apt/yum 或 Python 的 pip。它通过 Chart（应用模板包）来简化应用的安装、升级和回滚，是管理 K8s 应用的核心工具之一 |
+| 软件名                       | 版本    | 官方文档                                                     | 介绍                                                         |
+| ---------------------------- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| k8s(kubeadm\kubelet\kubectl) | v1.34.3 | https://v1-34.docs.kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ | kubeadm 用来建集群，kubelet 管理节点上的 Pod，kubectl 是和集群沟通的入口。 |
+| containerd                   | v2.2.1  | https://github.com/containerd/containerd/blob/main/docs/getting-started.md | 在 K8s 中，containerd 就是负责容器的运行时管理，承担镜像拉取、容器生命周期和资源隔离等核心功能，是 kubelet 与容器之间的桥梁。 |
+| helm                         | v3.14.4 | https://helm.sh/zh/docs/intro/install/                       | Helm 是 Kubernetes 的 包管理器，类似于 Linux 的 apt/yum 或 Python 的 pip。它通过 Chart（应用模板包）来简化应用的安装、升级和回滚，是管理 K8s 应用的核心工具之一 |
 
 #### K8S安装前说明
 

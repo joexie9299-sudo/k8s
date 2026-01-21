@@ -17,22 +17,22 @@
     # （GPU节点）创建目录
     mkdir -p /data/openebs/local/ollama
     # （GPU节点）将已经下载好的模型移动至目录内，以便pod可以读取到文件
-    mv ollama/qwen1_5-0_5b-chat-q5_0.gguf /data/openebs/local/ollama
+    mv ollama/qwen1_5-0_5b.gguf /data/openebs/local/ollama
     # （GPU节点）创建Modelfile文件
     cat >> Modelfile <<EOF
     # （GPU节点）写权重文件的地址   
-    FROM ./qwen2.5-0_5b.gguf
+    FROM ./qwen1_5-0_5b.gguf
     EOF
     # （GPU节点）将Modelfile文件与权重文件放置至同一目录下
     mv Modelfile /data/openebs/local/ollama
     
     # （master节点）进入ollama POD内
     kubectl get pod | grep ollama
-    kubectl exec -it ollama-6f447c9f67-k4tgt -- /bin/bash
+    kubectl exec -it ollama-6f447c9f67-wxs47  -- /bin/bash
     # (POD容器内)进入挂载的目录
     cd /root/.ollama/
     # (POD容器内)创建模型
-    ollama create qwen2.5:0.5b -f Modelfile
+    ollama create qwen1.5:0.5b -f Modelfile
     # (POD容器内)查看模型列表
     ollama list
     # (POD容器内)验证是否用到GPU 查看进程
