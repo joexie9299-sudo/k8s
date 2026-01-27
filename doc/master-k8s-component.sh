@@ -18,5 +18,10 @@ kubectl apply -f /data/k8s/yaml/user.yaml
 kubectl create ns gpu-operator
 kubectl label --overwrite ns gpu-operator pod-security.kubernetes.io/enforce=privileged
 helm install gpu-operator /data/k8s/heml/gpu-operator-v25.10.1.tgz --namespace gpu-operator --set driver.enabled=false
+helm upgrade --install gpu-operator /data/k8s/heml/gpu-operator-v25.10.1.tgz \
+  -n gpu-operator \
+  --set devicePlugin.enabled=false \
+  --set driver.enabled=false
+
 ## 检查pod是否都正常RUNNING
 kubectl get pod -n gpu-operator
